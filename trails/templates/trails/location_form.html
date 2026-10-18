@@ -1,0 +1,21 @@
+{% extends 'trails/base.html' %}
+
+{% block title %}Add Location | TrailMate{% endblock %}
+
+{% block content %}
+<h1>Add a New Location</h1>
+<p>Share a mountain or region with other hiking enthusiasts.</p>
+
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit" class="button">Save Location</button>
+</form>
+
+<p>
+    <a href="{% url 'location-list' %}">Back to Locations</a>
+</p>
+{% endblock %}

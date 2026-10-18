@@ -1,0 +1,20 @@
+{% extends 'trails/base.html' %}
+
+{% block title %}Add Trail | TrailMate{% endblock %}
+
+{% block content %}
+<h1>Add a New Hiking Trail</h1>
+<p>Share a hiking route with other outdoor enthusiasts.</p>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit" class="button">Save Trail</button>
+</form>
+
+<p>
+    <a href="{% url 'trail-list' %}">Back to Trails</a>
+</p>
+{% endblock %}

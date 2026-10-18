@@ -1,0 +1,32 @@
+{% extends 'trails/base.html' %}
+
+{% block title %}{{ trail.name }} | TrailMate{% endblock %}
+
+{% block content %}
+<h1>{{ trail.name }}</h1>
+
+<p>{{ trail.description }}</p>
+
+<div class="trail-item">
+    <p><strong>Location:</strong> {{ trail.location.name }}</p>
+    <p><strong>Region:</strong> {{ trail.location.region }}</p>
+    <p><strong>Category:</strong> {{ trail.category.name }}</p>
+    <p><strong>Distance:</strong> {{ trail.distance }} km</p>
+    <p><strong>Duration:</strong> {{ trail.duration }} hours</p>
+    <p><strong>Difficulty:</strong> {{ trail.difficulty }}</p>
+
+    <p><strong>Features:</strong></p>
+    <ul>
+        {% for feature in trail.features.all %}
+            <li>{{ feature.name }} — {{ feature.description }}</li>
+        {% empty %}
+            <li>No features added yet.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<p>
+    <a class="button" href="{% url 'trail-edit' trail.pk %}">Edit Trail</a>
+    <a class="button" href="{% url 'trail-list' %}">Back to Trails</a>
+</p>
+{% endblock %}

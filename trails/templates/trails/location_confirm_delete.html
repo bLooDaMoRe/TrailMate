@@ -1,0 +1,22 @@
+{% extends 'trails/base.html' %}
+
+{% block title %}Delete Location | TrailMate{% endblock %}
+
+{% block content %}
+<h1>Delete Location</h1>
+
+<p>
+    Are you sure you want to delete
+    <strong>{{ location.name }}</strong>?
+</p>
+
+<p>
+    Warning: hiking trails associated with this location may also be deleted.
+</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="button">Yes, Delete Location</button>
+    <a class="button" href="{% url 'location-list' %}">Cancel</a>
+</form>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'trails/base.html' %}
+
+{% block title %}Trails | TrailMate{% endblock %}
+
+{% block content %}
+<h1>Hiking Trails in Bulgaria</h1>
+
+<p>Explore hiking routes and discover your next adventure.</p>
+
+<p>
+    <a class="button" href="{% url 'trail-create' %}">
+        Add New Trail
+    </a>
+</p>
+
+<div class="trail-list">
+    {% for trail in trails %}
+        <article class="trail-item">
+            <h2>{{ trail.name }}</h2>
+
+            <p>
+                <a class="button" href="{% url 'trail-detail' trail.pk %}">
+                    View Details
+                </a>
+            </p>
+
+            <p><strong>Location:</strong> {{ trail.location.name }}</p>
+            <p><strong>Category:</strong> {{ trail.category.name }}</p>
+            <p><strong>Distance:</strong> {{ trail.distance }} km</p>
+            <p><strong>Duration:</strong> {{ trail.duration }} hours</p>
+            <p><strong>Difficulty:</strong> {{ trail.difficulty }}</p>
+            <p>{{ trail.description }}</p>
+
+            <p>
+                <strong>Features:</strong>
+                {% for feature in trail.features.all %}
+                    {{ feature.name }}{% if not forloop.last %}, {% endif %}
+                {% empty %}
+                    No features added.
+                {% endfor %}
+            </p>
+
+            <p>
+                <a class="button" href="{% url 'trail-edit' trail.pk %}">
+                    Edit Trail
+                </a>
+            </p>
+
+            <p>
+                <a class="button" href="{% url 'trail-delete' trail.pk %}">
+                    Delete Trail
+                </a>
+            </p>
+        </article>
+    {% empty %}
+        <p>No hiking trails have been added yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}

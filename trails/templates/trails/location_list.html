@@ -1,0 +1,43 @@
+
+{% extends 'trails/base.html' %}
+
+{% block title %}Locations | TrailMate{% endblock %}
+
+{% block content %}
+<h1>Hiking Locations in Bulgaria</h1>
+
+<p>Discover mountains and regions for your next hiking adventure.</p>
+
+<p>
+    <a class="button" href="{% url 'location-create' %}">
+        Add New Location
+    </a>
+</p>
+
+<div class="location-list">
+    {% for location in locations %}
+        <article class="location-item">
+            <h2>{{ location.name }}</h2>
+            <p>{{ location.region }}</p>
+            <p>{{ location.description }}</p>
+
+
+            <p>
+                <a class="button" href="{% url 'location-edit' location.pk %}">
+                    Edit Location
+                </a>
+            </p>
+
+            <p>
+                <a class="button" href="{% url 'location-delete' location.pk %}">
+                    Delete Location
+                </a>
+            </p>
+
+
+        </article>
+    {% empty %}
+        <p>No locations have been added yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}
