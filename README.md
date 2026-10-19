@@ -4,7 +4,9 @@ TrailMate is a Django web application for discovering and managing hiking trails
 
 ## About the Project
 
-The application helps users explore hiking routes, view trail details, and manage information about hiking locations.
+The project provides a simple way to explore hiking routes, discover locations, and view information about different trails.
+
+TrailMate is developed as an individual Django project.
 
 ## Features
 
@@ -15,7 +17,8 @@ The application helps users explore hiking routes, view trail details, and manag
 - View location details and associated trails.
 - Add, edit, and delete locations.
 - Organize trails by location and category.
-- Add features to hiking trails.
+- Associate features with hiking trails.
+- Responsive layout with custom CSS styling.
 
 ## Technologies
 
@@ -24,13 +27,22 @@ The application helps users explore hiking routes, view trail details, and manag
 - SQLite
 - HTML
 - CSS
-- Git and GitHub
+- Git
+- GitHub
+
+## Project Structure
+
+- `config/` — Django project configuration.
+- `trails/` — Hiking trails, locations, forms, views, and templates.
+- `catalog/` — Trail features and related data.
+- `favorites/` — Application module currently under development.
+- `manage.py` — Django management utility.
 
 ## Getting Started
 
 ### Requirements
 
-- Python
+- Python 3
 - pip
 
 ### Installation
@@ -42,37 +54,53 @@ The application helps users explore hiking routes, view trail details, and manag
    cd TrailMate
    ```
 
-2. Create and activate a virtual environment:
+2. Create a virtual environment:
 
    ```bash
    python3 -m venv .venv
+   ```
+
+3. Activate the virtual environment:
+
+   ```bash
    source .venv/bin/activate
    ```
 
-3. Install Django:
+4. Install Django:
 
    ```bash
    pip install django
    ```
 
-4. Apply database migrations:
+5. Apply database migrations:
 
    ```bash
    python3 manage.py migrate
    ```
 
-5. Start the development server:
+6. Start the development server:
 
    ```bash
    python3 manage.py runserver
    ```
 
-6. Open http://127.0.0.1:8000/ in your browser.
+7. Open the application in your browser:
 
-## Project Status
+   http://127.0.0.1:8000/
 
-TrailMate is currently under development as an individual Django project.
+## Design Resources and Credits
+
+The following resources were used for button styling ideas and CSS hover effect inspiration:
+
+- [CSS Buttons](https://www.css-buttons.com/)
+- [Dimas' Toolbox — CSS Button Hover Effects Generator](https://dimastoolbox.com/css-button-hover-effects-generator)
+
+The button styling and hover effects were adapted to fit the TrailMate project.
 
 ## Author
 
 Bobi Uruchov
+
+## Project Status
+
+TrailMate is currently under development.
