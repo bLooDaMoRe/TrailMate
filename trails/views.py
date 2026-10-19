@@ -107,3 +107,10 @@ def trail_detail(request, pk):
     return render(request, 'trails/trail_detail.html', {
         'trail': trail,
     })
+
+def location_detail(request, pk):
+    location = get_object_or_404(Location, pk=pk)
+
+    return render(request, 'trails/location_detail.html', {
+        'location': location,
+    })

@@ -1,0 +1,34 @@
+{% extends 'trails/base.html' %}
+
+{% block title %}{{ location.name }} | TrailMate{% endblock %}
+
+{% block content %}
+<h1>{{ location.name }}</h1>
+
+<p><strong>Region:</strong> {{ location.region }}</p>
+<p>{{ location.description }}</p>
+
+<h2>Hiking Trails in This Location</h2>
+
+<div class="trail-list">
+    {% for trail in location.trail_set.all %}
+        <article class="trail-item">
+            <h3>{{ trail.name }}</h3>
+            <p>{{ trail.distance }} km</p>
+            <p>{{ trail.duration }} hours</p>
+
+            <a class="btn-8 btn-8-colors" href="{% url 'trail-detail' trail.pk %}">
+                View Trail
+            </a>
+        </article>
+    {% empty %}
+        <p>No trails have been added to this location yet.</p>
+    {% endfor %}
+</div>
+
+<p>
+    <a class="btn-8 btn-8-colors" href="{% url 'location-list' %}">
+        Back to Locations
+    </a>
+</p>
+{% endblock %}

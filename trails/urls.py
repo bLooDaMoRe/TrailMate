@@ -12,4 +12,5 @@ urlpatterns = [
     path('locations/<int:pk>/edit/', views.location_edit, name='location-edit'),
     path('locations/<int:pk>/delete/', views.location_delete, name='location-delete'),
     path('trails/<int:pk>/', views.trail_detail, name='trail-detail'),
+    path('locations/<int:pk>/', views.location_detail, name='location-detail'),
 ]

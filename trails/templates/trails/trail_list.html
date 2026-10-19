@@ -8,7 +8,7 @@
 <p>Explore hiking routes and discover your next adventure.</p>
 
 <p>
-    <a class="button" href="{% url 'trail-create' %}">
+    <a class="btn-8 btn-8-colors" href="{% url 'trail-create' %}">
         Add New Trail
     </a>
 </p>
@@ -19,7 +19,7 @@
             <h2>{{ trail.name }}</h2>
 
             <p>
-                <a class="button" href="{% url 'trail-detail' trail.pk %}">
+                <a class="btn-8 btn-8-colors" href="{% url 'trail-detail' trail.pk %}">
                     View Details
                 </a>
             </p>
@@ -41,13 +41,13 @@
             </p>
 
             <p>
-                <a class="button" href="{% url 'trail-edit' trail.pk %}">
+                <a class="btn-8 btn-8-colors" href="{% url 'trail-edit' trail.pk %}">
                     Edit Trail
                 </a>
             </p>
 
             <p>
-                <a class="button" href="{% url 'trail-delete' trail.pk %}">
+                <a class="btn-8 btn-8-colors" href="{% url 'trail-delete' trail.pk %}">
                     Delete Trail
                 </a>
             </p>

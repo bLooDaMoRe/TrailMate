@@ -5,101 +5,173 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f7f2;
-    color: #26352b;
+    background-color: #ffffff;
+    color: #222222;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
-    padding: 20px 8%;
-    background-color: #ffffff;
+    gap: 20px;
+    padding: 15px 5%;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #cccccc;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     text-decoration: none;
-    color: #315c3b;
+    color: #222222;
     flex-shrink: 0;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 18px;
     flex-shrink: 0;
 }
 
 .nav-links a {
+    position: relative;
+    display: inline-block;
+    color: #333333;
     text-decoration: none;
-    color: #26352b;
+    padding: 8px 0;
     white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #A6A6A6;
+    width: 0;
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #4d8056;
+    color: #111111;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    animation: heartbeat116 1.5s ease-in-out 0.3s infinite;
+}
+
+@keyframes heartbeat116 {
+    0%, 100% {
+        width: 100%;
+    }
+
+    50% {
+        width: 60%;
+    }
 }
 
 .container {
-    width: 84%;
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 90%;
+    max-width: 1000px;
+    margin: 25px auto;
 }
 
 .hero {
-    padding: 100px 0;
+    padding: 45px 0;
 }
 
 .eyebrow {
-    color: #4d8056;
     font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    color: #555555;
 }
 
 .hero h1 {
     max-width: 650px;
-    font-size: 48px;
-    margin: 20px 0;
+    font-size: 36px;
+    margin: 15px 0;
 }
 
 .intro {
     max-width: 550px;
-    line-height: 1.7;
-    color: #59665c;
+    line-height: 1.5;
+    color: #444444;
 }
+
+/* Standard buttons */
 
 .button {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 22px;
-    background-color: #315c3b;
-    color: white;
+    margin-top: 8px;
+    padding: 8px 12px;
+    background-color: #eeeeee;
+    color: #222222;
     text-decoration: none;
-    border-radius: 5px;
+    border: 1px solid #999999;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .button:hover {
-    background-color: #24472d;
+    background-color: #dddddd;
+}
+
+/* New button style */
+
+.btn-8 {
+    display: inline-block;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #212529;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-8-colors {
+    color: #ffffff;
+    background-color: #212529;
+    border-color: #212529;
+}
+
+.btn-8-colors:hover {
+    color: #ffffff;
+    background-color: #42474c;
+    border-color: #42474c;
+}
+
+.btn-8:disabled {
+    pointer-events: none;
+    opacity: 0.65;
 }
 
 .footer {
-    padding: 20px 8%;
-    border-top: 1px solid #dce4d9;
-    color: #59665c;
+    margin-top: 35px;
+    padding: 15px 5%;
+    border-top: 1px solid #cccccc;
+    color: #555555;
 }
 
 @media (max-width: 600px) {
     .navbar {
-        padding: 20px 5%;
+        padding: 15px 5%;
         flex-wrap: wrap;
     }
 
     .nav-links {
-        gap: 16px;
+        gap: 12px;
+        flex-wrap: wrap;
     }
 
     .container {
@@ -107,10 +179,10 @@ body {
     }
 
     .hero {
-        padding: 60px 0;
+        padding: 30px 0;
     }
 
     .hero h1 {
-        font-size: 36px;
+        font-size: 30px;
     }
 }

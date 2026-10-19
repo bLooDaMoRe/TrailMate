@@ -1,4 +1,3 @@
-
 {% extends 'trails/base.html' %}
 
 {% block title %}Locations | TrailMate{% endblock %}
@@ -9,7 +8,7 @@
 <p>Discover mountains and regions for your next hiking adventure.</p>
 
 <p>
-    <a class="button" href="{% url 'location-create' %}">
+    <a class="btn-8 btn-8-colors" href="{% url 'location-create' %}">
         Add New Location
     </a>
 </p>
@@ -21,20 +20,23 @@
             <p>{{ location.region }}</p>
             <p>{{ location.description }}</p>
 
+            <p>
+                <a class="btn-8 btn-8-colors" href="{% url 'location-detail' location.pk %}">
+                    View Details
+                </a>
+            </p>
 
             <p>
-                <a class="button" href="{% url 'location-edit' location.pk %}">
+                <a class="btn-8 btn-8-colors" href="{% url 'location-edit' location.pk %}">
                     Edit Location
                 </a>
             </p>
 
             <p>
-                <a class="button" href="{% url 'location-delete' location.pk %}">
+                <a class="btn-8 btn-8-colors" href="{% url 'location-delete' location.pk %}">
                     Delete Location
                 </a>
             </p>
-
-
         </article>
     {% empty %}
         <p>No locations have been added yet.</p>
