@@ -4,38 +4,40 @@ TrailMate is a Django web application for discovering and managing hiking trails
 
 ## About the Project
 
-The project provides a simple way to explore hiking routes, discover locations, and view information about different trails.
+TrailMate provides a simple interface for exploring hiking trails, viewing detailed trail information, managing hiking locations, and organizing trails by category and features.
 
-TrailMate is developed as an individual Django project.
+The application was developed as an individual Django project.
 
 ## Features
 
-- Browse hiking trails.
-- View detailed information about each trail.
-- Add, edit, and delete hiking trails.
-- Browse hiking locations.
-- View location details and associated trails.
-- Add, edit, and delete locations.
+- Browse hiking trails and view their details.
+- Create, edit, and delete hiking trails.
+- Browse hiking locations and view associated trails.
+- Create, edit, and delete locations.
 - Organize trails by location and category.
 - Associate features with hiking trails.
-- Responsive layout with custom CSS styling.
+- Create and browse trail features.
+- Save and view favorite trails.
+- Responsive navigation and custom CSS styling.
+- Custom page for handling not-found URLs.
 
 ## Technologies
 
 - Python
 - Django
 - SQLite
-- HTML
-- CSS
+- HTML5
+- CSS3
 - Git
 - GitHub
 
 ## Project Structure
 
-- `config/` — Django project configuration.
-- `trails/` — Hiking trails, locations, forms, views, and templates.
-- `catalog/` — Trail features and related data.
-- `favorites/` — Application module currently under development.
+- `config/` — Django project configuration and URL routing.
+- `trails/` — Trail and location models, forms, views, and templates.
+- `catalog/` — Trail feature management.
+- `favorites/` — Favorite trail functionality.
+- `templates/` — Shared and custom templates.
 - `manage.py` — Django management utility.
 
 ## Getting Started
@@ -54,37 +56,32 @@ TrailMate is developed as an individual Django project.
    cd TrailMate
    ```
 
-2. Create a virtual environment:
+2. Create and activate a virtual environment:
 
    ```bash
    python3 -m venv .venv
-   ```
-
-3. Activate the virtual environment:
-
-   ```bash
    source .venv/bin/activate
    ```
 
-4. Install Django:
+3. Install Django:
 
    ```bash
    pip install django
    ```
 
-5. Apply database migrations:
+4. Apply database migrations:
 
    ```bash
    python3 manage.py migrate
    ```
 
-6. Start the development server:
+5. Start the development server:
 
    ```bash
    python3 manage.py runserver
    ```
 
-7. Open the application in your browser:
+6. Open the application in your browser:
 
    http://127.0.0.1:8000/
 
