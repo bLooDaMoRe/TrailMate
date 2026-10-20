@@ -32,6 +32,13 @@
             <p>{{ trail.description }}</p>
 
             <p>
+                <a class="btn-8 btn-8-colors"
+                   href="{% url 'favorites:add_favorite' trail.id %}">
+                    Add to Favorites
+                </a>
+            </p>
+
+            <p>
                 <strong>Features:</strong>
                 {% for feature in trail.features.all %}
                     {{ feature.name }}{% if not forloop.last %}, {% endif %}

@@ -1,0 +1,32 @@
+{% extends 'trails/base.html' %}
+
+{% block title %}Add Feature | TrailMate{% endblock %}
+
+{% block content %}
+<section class="form-container">
+    <h1>Add a Trail Feature</h1>
+    <p>Describe a special feature found on a hiking trail.</p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.help_text %}
+                    <small>{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+
+        <button class="btn-8 btn-8-colors" type="submit">Save Feature</button>
+        <a class="btn-8" href="{% url 'feature-list' %}">Cancel</a>
+    </form>
+</section>
+{% endblock %}

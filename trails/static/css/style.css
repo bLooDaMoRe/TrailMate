@@ -186,3 +186,66 @@ body {
         font-size: 30px;
     }
 }
+
+
+.footer {
+    margin-top: 35px;
+    padding: 25px 5%;
+    border-top: 1px solid #cccccc;
+    color: #555555;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer strong {
+    color: #222222;
+}
+
+.error-page {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.error-page .error-code {
+    font-size: 1rem;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.error-page h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+.error-page .intro {
+    max-width: 650px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+}
+
+.error-page .error-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+@media (max-width: 600px) {
+    .error-page {
+        padding: 48px 16px;
+    }
+
+    .error-page h1 {
+        font-size: 2.5rem;
+    }
+}

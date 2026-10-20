@@ -1,0 +1,37 @@
+{% extends 'trails/base.html' %}
+
+{% block title %}My Favorites | TrailMate{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>My Favorite Trails</h1>
+    <p class="intro">Your saved hiking trails in one place.</p>
+</section>
+
+<div class="trail-list">
+    {% for trail in trails %}
+        <article class="trail-item">
+            <h2>{{ trail.name }}</h2>
+            <p>{{ trail.description }}</p>
+            <p><strong>Distance:</strong> {{ trail.distance }} km</p>
+            <p><strong>Duration:</strong> {{ trail.duration }} hours</p>
+
+            <p>
+                <a class="btn-8 btn-8-colors"
+                   href="{% url 'trail-detail' trail.pk %}">
+                    View Trail
+                </a>
+            </p>
+
+            <p>
+                <a class="btn-8 btn-8-colors"
+                   href="{% url 'favorites:remove_favorite' trail.id %}">
+                    Remove from Favorites
+                </a>
+            </p>
+        </article>
+    {% empty %}
+        <p>You haven't added any favorite trails yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'trails/base.html' %}
+
+{% block title %}Features | TrailMate{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <h1>Trail Features</h1>
+    <p>Explore the features that make every trail special.</p>
+    <a class="btn-8 btn-8-colors" href="{% url 'feature-create' %}">Add Feature</a>
+</section>
+
+<section class="card-grid">
+    {% for feature in features %}
+        <article class="card">
+            <h2>{{ feature.name }}</h2>
+            <p>{{ feature.description }}</p>
+        </article>
+    {% empty %}
+        <p>No features have been added yet.</p>
+    {% endfor %}
+</section>
+{% endblock %}
